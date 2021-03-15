@@ -15,11 +15,14 @@ module.exports = function check(str, bracketsConfig) {
             if(!bufer.includes(el)){
                 bufer.push(el);
                 return
-            } else if(bufer.includes(el) && bufer[bufer.length-1] === el){
+            }
+            if(bufer.includes(el) && bufer[bufer.length-1] === el){
                 bufer.pop()
                 return;
-            } else if(bufer.includes(el) && bufer[bufer.length-1] === el){
+            }
+            if(bufer.includes(el) && bufer[bufer.length-1] === el){
                 check = false;
+                return;
             }
         }
         if(close.includes(el)){
